@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Lovely Sher</title>
+    <link rel="icon" href="data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22> <text y=%22.9em%22 font-size=%2290%22>✉️</text> </svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Envelope Animation -->
+    <div id="envelope-wrapper" class="envelope-wrapper-container">
+        <div id="envelope" class="close">
+            <div class="front flap"></div>
+            <div class="front pocket"></div>
+            <div class="letter">
+                <p class="font-playfair text-lg text-stone-700 text">Touch this letter</p>
+            </div>
+            <div class="hearts">
+                <div class="heart a1"></div>
+                <div class="heart a2"></div>
+                <div class="heart a3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div id="main-content">
+        <div class="paper-sheet max-w-4xl mx-auto">
+            <header class="text-center py-16 md:py-24 bg-rose-50">
+                <div class="container mx-auto px-6">
+                    <!-- Change the name here -->
+                    <h1 class="text-5xl md:text-7xl text-rose-800" style="font-family: 'Rouge Script', cursive;">Happy
+                        Graduation, My Love!</h1>
+                    <p class="mt-4 text-lg md:text-xl text-stone-600 max-w-2xl mx-auto">To Sherlina, all your hard work
+                        and sacrifices have finally paid off</p>
+                </div>
+            </header>
+
+            <main class="container mx-auto px-6 py-12 md:py-20">
+
+                <!-- Personal Message Section -->
+                <section class="text-center max-w-3xl mx-auto mb-24">
+                    <h2 class="font-playfair text-3xl md:text-4xl text-rose-700 mb-6">An Amazing Journey</h2>
+                    <p class="text-stone-600 leading-relaxed text-base md:text-lg mb-8">
+                        I still remember the first day you started this journey. I saw all your efforts, sleepless
+                        nights, and your unyielding spirit. You never gave up, and today is proof of all that. You have
+                        not only earned a degree, but you have grown into a stronger and more amazing person. I am lucky
+                        to have accompanied you every step of the way.
+                    </p>
+                </section>
+
+                <!-- Photo Gallery -->
+                <section class="mb-16 md:mb-24">
+                    <h2 class="font-playfair text-3xl md:text-4xl text-center text-rose-700 mb-8 md:mb-12">Our Memories
+                    </h2>
+                    <div class="relative max-w-2xl mx-auto">
+                        <!-- Carousel Images -->
+                        <div id="carousel-images" class="overflow-hidden rounded-lg shadow-md aspect-square relative">
+                            <img src="images/Sher1.jpg" alt="Memory 1"
+                                class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-500 cursor-pointer"
+                                style="display:block; opacity:1;">
+                            <img src="images/Sher4.jpg" alt="Memory 2"
+                                class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-500 cursor-pointer"
+                                style="display:block; opacity:0;">
+                            <img src="images/Sher2.jpg" alt="Memory 3"
+                                class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-500 cursor-pointer"
+                                style="display:block; opacity:0;">
+                            <img src="images/Sher5.jpg" alt="Memory 4"
+                                class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-500 cursor-pointer"
+                                style="display:block; opacity:0;">
+                            <img src="images/Sher3.jpg" alt="Memory 5"
+                                class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-500 cursor-pointer"
+                                style="display:block; opacity:0;">
+                            <img src="images/Sher6.jpg" alt="Memory 6"
+                                class="carousel-img w-full h-full object-cover absolute inset-0 transition-opacity duration-500 cursor-pointer"
+                                style="display:block; opacity:0;">
+                        </div>
+                        <!-- Carousel Controls -->
+                        <button id="prev-btn"
+                            class="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-rose-100 transition z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-700" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button id="next-btn"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full p-2 shadow hover:bg-rose-100 transition z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-700" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <!-- Carousel Indicators -->
+                        <div class="flex justify-center mt-4 gap-2">
+                            <span class="carousel-dot w-3 h-3 rounded-full bg-rose-400 cursor-pointer"></span>
+                            <span class="carousel-dot w-3 h-3 rounded-full bg-rose-200 cursor-pointer"></span>
+                            <span class="carousel-dot w-3 h-3 rounded-full bg-rose-200 cursor-pointer"></span>
+                            <span class="carousel-dot w-3 h-3 rounded-full bg-rose-200 cursor-pointer"></span>
+                            <span class="carousel-dot w-3 h-3 rounded-full bg-rose-200 cursor-pointer"></span>
+                            <span class="carousel-dot w-3 h-3 rounded-full bg-rose-200 cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <!-- Popup Modal -->
+                    <div id="popup-modal"
+                        class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+                        <div class="relative">
+                            <img id="popup-img" src="" alt="Popup"
+                                class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-lg">
+                            <button id="close-popup"
+                                class="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-2 hover:bg-rose-100 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-700" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Closing Section -->
+                <section class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-playfair text-3xl md:text-4xl text-rose-700 mb-6">A New Chapter Awaits</h2>
+                    <p class="text-stone-600 leading-relaxed text-base md:text-lg mb-8">
+                        This graduation is not the end, but the beginning of a greater adventure. I will always be here
+                        to support you, celebrate every victory, and accompany you in achieving all your dreams.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed text-base md:text-lg">
+                        With all my love and pride,
+                    </p>
+                    <p class="text-5xl mt-2 text-rose-800" style="font-family: 'Rouge Script', cursive;">Ezra</p>
+                </section>
+
+            </main>
+
+            <footer class="text-center py-8 mt-12 bg-rose-50">
+                <p class="text-stone-500">Made with ❤️ for the most special person.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Floating Music Button -->
+    <button id="music-btn"
+        class="hidden fixed bottom-6 right-6 z-50 bg-rose-600 hover:bg-rose-700 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center transition focus:outline-none"
+        aria-label="Toggle Music">
+
+        <!-- Font Awesome Icon Play -->
+        <i id="music-icon-play" class="fa fa-play" aria-hidden="true"></i>
+    
+        <!-- Font Awesome Icon Pause -->
+        <i id="music-icon-pause" class="fa fa-pause hidden" aria-hidden="true"></i>
+    </button>
+
+    <audio id="bg-music" src="music/Semestaku.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

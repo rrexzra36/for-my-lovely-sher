@@ -1,0 +1,228 @@
+body {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fdf2f8;
+            /* Warna pink mawar (rose-50) */
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Styling untuk amplop dan animasi surat - Diadaptasi dari kode Anda */
+        .envelope-wrapper-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        #envelope {
+            position: relative;
+            width: 280px;
+            height: 180px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            background-color: #be185d;
+            /* Warna Pink Tua */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .2);
+            cursor: pointer;
+        }
+
+        .front {
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: 3;
+        }
+
+        .flap {
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+            border-bottom: 82px solid transparent;
+            border-top: 98px solid #be185d;
+            /* Warna Pink Tua */
+            transform-origin: top;
+            pointer-events: none;
+        }
+
+        .pocket {
+            border-left: 140px solid #ec4899;
+            /* Warna Pink Sedang */
+            border-right: 140px solid #ec4899;
+            /* Warna Pink Sedang */
+            border-bottom: 90px solid #db2777;
+            /* Warna Pink Agak Tua */
+            border-top: 90px solid transparent;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .letter {
+            position: relative;
+            background-color: #fff;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 90%;
+            top: 5%;
+            border-radius: 6px;
+            box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            /* Menambahkan cursor pointer ke surat */
+        }
+
+        .letter .text {
+            color: #333;
+        }
+
+        .letter:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 25%, rgba(215, 227, 239, 0.70) 55%, rgba(215, 227, 239, 1.00) 100%);
+        }
+
+        /* Animasi Buka/Tutup */
+        .open .flap {
+            transform: rotateX(180deg);
+            transition: transform .4s ease, z-index .6s;
+            z-index: 1;
+        }
+
+        .close .flap {
+            transform: rotateX(0deg);
+            transition: transform .4s .6s ease, z-index 1s;
+            z-index: 5;
+        }
+
+        .close .letter {
+            transform: translateY(0px);
+            transition: transform .4s ease, z-index 1s;
+            z-index: 1;
+        }
+
+        .open .letter {
+            transform: translateY(-60px);
+            transition: transform .4s .6s ease, z-index .6s;
+            z-index: 2;
+        }
+
+        /* Animasi Hati */
+        .hearts {
+            position: absolute;
+            top: 90px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0;
+            right: 10%;
+            pointer-events: none;
+        }
+
+        .heart:before,
+        .heart:after {
+            position: absolute;
+            content: "";
+            left: 25px;
+            top: 0;
+            width: 25px;
+            height: 40px;
+            background: #D00000;
+            border-radius: 25px 25px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+            pointer-events: none;
+        }
+
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .close .heart {
+            opacity: 0;
+            animation: none;
+        }
+
+        .a1 {
+            left: 20%;
+            transform: scale(0.6);
+            opacity: 1;
+            animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+            animation-fill-mode: forwards;
+            animation-delay: .7s;
+        }
+
+        .a2 {
+            left: 55%;
+            transform: scale(1);
+            opacity: 1;
+            animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+            animation-fill-mode: forwards;
+            animation-delay: .7s;
+        }
+
+        .a3 {
+            left: 10%;
+            transform: scale(0.8);
+            opacity: 1;
+            animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+            animation-fill-mode: forwards;
+            animation-delay: .7s;
+        }
+
+        @keyframes slideUp {
+            0% {
+                top: 0;
+            }
+
+            100% {
+                top: -600px;
+            }
+        }
+
+        @keyframes sideSway {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: 50px;
+            }
+        }
+
+        /* Menyembunyikan konten utama pada awalnya */
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            padding: 2rem 1rem;
+            /* Memberi jarak di sekitar kertas */
+        }
+
+        /* Styling untuk efek kertas */
+        .paper-sheet {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            /* Lebar maksimum kertas */
+            overflow: hidden;
+            /* Penting untuk menjaga sudut membulat */
+        }
